@@ -1,25 +1,20 @@
 var button = document.getElementById('start-button')
 
 button.addEventListener('click', function () {
+  var greeting = window.prompt('Welcome to the crazy where-to-go world - how are you today?')
   greeting = greeting || ''
   greeting = greeting.trim()
-  var greeting = window.prompt('Welcome to the crazy where-to-go world - how are you today?')
   if (greeting === null || greeting === undefined) {
     window.alert('Quit now? No way, it\'s not even a choice')
   } else {
-    hour = parseInt('hour')
     var hour = window.prompt('"' + greeting + '"' + '? Hey, same here! And it\'s just a good time for an adventure. So how much time do you have for this adventure? Name a number!')
+    hour = parseInt(hour)
     if (isNaN(hour)) { hour = 1 }
-    var ready = window.prompt('Okay! We will play the game within ' + hour + ' minute(s). Alright, it\'s time to depart! Let\'s Go and decide our destination. Are you ready?')
-    ready = ready.trim()
-    if (ready === 'yes' || ready === 'y') {
-      window.confirm('Great! Click on the Destination button NOW!')
-    } else if (ready === 'no' || ready === '' || ready === 'n') {
-      window.confirm('Okay, just restart or click on the Destination button later.')
-    } else if (ready === null || ready === undefined) {
-      window.confirm('Quit now? No way, it\'s not even a choice')
+    var ready = window.confirm('Okay! We will play the game within ' + hour + ' minute(s). Alright, it\'s time to depart! Let\'s Go and decide our destination. Are you ready?')
+    if (ready) {
+      window.alert('Great! Click on the Destination button NOW!')
     } else {
-      window.confirm('Hey, are you with us? Try again?')
+      window.alert('Quit now? No way, it\'s not even a choice')
     }
   }
 })
@@ -29,6 +24,7 @@ destinationButton.addEventListener('click', function () {
   var destination = window.prompt('Do you prefer exploring Other Countires or visiting Another State?')
   if (destination === 'other countries' || destination === 'countries' || destination === 'country') {
     var country = window.prompt('Good choices! So guess which country you are going to?')
+    country = country.toUpperCase().trim()
     if (country === 'france') {
       window.alert('Bingo! Wow, it\'s glorious place, isn\'t it?')
     } else if (country === 'japan') {
@@ -44,9 +40,9 @@ destinationButton.addEventListener('click', function () {
     } else {
       window.alert('Coooooool. But I want to go to other place.')
     }
-    country = country.toUpperCase().trim()
   } else if (destination === 'other states' || destination === 'states' || destination === 'state') {
     var state = window.prompt('That\'s great! So guess which state we\'re going to?')
+    state = state.toUpperCase().trim()
     if (state === 'california') {
       window.alert('Yay! That\'s the one! Let\'s Go for our adventure!!')
     } else if (state === 'michigan') {
@@ -60,18 +56,17 @@ destinationButton.addEventListener('click', function () {
     } else {
       window.alert('Coooooool. But I want to go to other state.')
     }
-    state = state.toUpperCase().trim()
   } else if (destination === '') {
     window.alert('Are you sure you\'ve entered anything? Try again!')
   } else if (destination === null || destination === undefined) {
     window.alert('Gameover Now? No, it\'s not even a choice')
   } else {
     var randomNumber = Math.random()
+    destination = destination.toUpperCase().trim()
     if (randomNumber > 0.5) {
       window.alert('Come on! Advernture is ahead! Keep going!')
     } else {
       window.alert('Okay! I am tired of asking. THE END.')
     }
   }
-  destination = destination.toUpperCase().trim()
 })
