@@ -24,7 +24,7 @@ destinationButton.addEventListener('click', function () {
   var destination = window.prompt('Do you prefer exploring Other Countires or visiting Another State?')
   if (destination === 'other countries' || destination === 'countries' || destination === 'country') {
     var country = window.prompt('Good choices! So guess which country you are going to?')
-    country = country.toUpperCase().trim()
+    country = country.toLowerCase().trim()
     if (country === 'france') {
       window.alert('Bingo! Wow, it\'s glorious place, isn\'t it?')
     } else if (country === 'japan') {
@@ -42,7 +42,7 @@ destinationButton.addEventListener('click', function () {
     }
   } else if (destination === 'other states' || destination === 'states' || destination === 'state') {
     var state = window.prompt('That\'s great! So guess which state we\'re going to?')
-    state = state.toUpperCase().trim()
+    state = state.toLowerCase().trim()
     if (state === 'california') {
       window.alert('Yay! That\'s the one! Let\'s Go for our adventure!!')
     } else if (state === 'michigan') {
@@ -62,7 +62,7 @@ destinationButton.addEventListener('click', function () {
     window.alert('Gameover Now? No, it\'s not even a choice')
   } else {
     var randomNumber = Math.random()
-    destination = destination.toUpperCase().trim()
+    destination = destination.toLowerCase().trim()
     if (randomNumber > 0.5) {
       window.alert('Come on! Advernture is ahead! Keep going!')
     } else {
