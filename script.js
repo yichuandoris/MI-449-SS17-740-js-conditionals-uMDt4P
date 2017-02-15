@@ -1,22 +1,27 @@
 var button = document.getElementById('start-button')
 
 button.addEventListener('click', function () {
-  var greeting = window.prompt('Welcome to the crazy where-to-go world - how are you today?')
-  var hour = window.prompt('"' + greeting + '"' + '? Hey, same here! And it\'s just a good time for an adventure. So how much time do you have for this adventure? Name a number!')
-  if (isNaN(hour)) { hour = 1 }
-  var ready = window.prompt('Okay! We will play the game within ' + hour + ' minute(s). Alright, it\'s time to depart! Let\'s Go and decide our destination. Are you ready?')
-  if (ready === 'yes' || ready === 'y') {
-    window.alert('Great! Click on the Destination button NOW!')
-  } else if (ready === 'no' || ready === '' || ready === 'n') {
-    window.alert('Okay, just restart or click on the Destination button later.')
-  } else if (ready === null || ready === undefined) {
-    window.alert('Quit now? No way, it\'s not even a choice')
-  } else {
-    window.alert('Hey, are you with us? Try again?')
-  }
-  ready = ready.trim()
   greeting = greeting || ''
   greeting = greeting.trim()
+  var greeting = window.prompt('Welcome to the crazy where-to-go world - how are you today?')
+  if (greeting === null || greeting === undefined) {
+    window.alert('Quit now? No way, it\'s not even a choice')
+  } else {
+    hour = parseInt('hour')
+    var hour = window.prompt('"' + greeting + '"' + '? Hey, same here! And it\'s just a good time for an adventure. So how much time do you have for this adventure? Name a number!')
+    if (isNaN(hour)) { hour = 1 }
+    var ready = window.prompt('Okay! We will play the game within ' + hour + ' minute(s). Alright, it\'s time to depart! Let\'s Go and decide our destination. Are you ready?')
+    ready = ready.trim()
+    if (ready === 'yes' || ready === 'y') {
+      window.confirm('Great! Click on the Destination button NOW!')
+    } else if (ready === 'no' || ready === '' || ready === 'n') {
+      window.confirm('Okay, just restart or click on the Destination button later.')
+    } else if (ready === null || ready === undefined) {
+      window.confirm('Quit now? No way, it\'s not even a choice')
+    } else {
+      window.confirm('Hey, are you with us? Try again?')
+    }
+  }
 })
 
 var destinationButton = document.getElementById('destination-button')
